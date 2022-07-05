@@ -60,3 +60,6 @@ print('******************* Renaming columns -> WithColumnRenamed ***************
 student_df.withColumnRenamed('gender','sex').withColumnRenamed('roll','roll number').show(2, truncate=False)
 # Renamed while reading data from dataframe
 student_df.select(col('name')).alias('student name').show(2, truncate=False)
+
+print('****************************** Drop columns *************************************')
+student_df.select('*').drop('email').show(2, truncate=False)
