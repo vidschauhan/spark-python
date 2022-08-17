@@ -7,7 +7,7 @@ def base_dir():
 
 
 def get_json_path(dir_name):
-    base_dirs = 'D:\\data\\'
+    base_dirs = base_dir()
     json_file = os.listdir(f'{base_dirs}{dir_name}')[0]  # assuming there is only 1 file in directory
     return f'{base_dirs}{dir_name}\\{json_file}'
 
