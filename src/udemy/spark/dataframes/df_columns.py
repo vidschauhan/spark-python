@@ -54,10 +54,10 @@ student_df.withColumn('marks', col('marks') - 10) \
     .withColumn('updated marks', col('marks') + 20) \
     .withColumn('country', lit('India')).show(2, truncate=False)
 
-
 print('******************* Renaming columns -> WithColumnRenamed ********************')
 # If you are renaming a column which doesn't exist it won't throw error.
-student_df.withColumnRenamed('gender','sex').withColumnRenamed('roll','roll number').show(2, truncate=False)
+student_df.withColumnRenamed('gender', 'sex').withColumnRenamed('roll', 'roll number') \
+    .sort('name', 'roll number', ascending=[0, 1]).show(2, truncate=False)
 # Renamed while reading data from dataframe
 student_df.select(col('name')).alias('student name').show(2, truncate=False)
 
